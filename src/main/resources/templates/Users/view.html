@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf in action</title>
+</head>
+<body>
+<div th:replace="~{fragment/header :: header}"></div>
+<h3 data-th-text="${userModel.title}"></h3>
+<div>
+    <p><strong>ID</strong><span data-th-text="${userModel.user.id}"></span></p>
+    <p><strong>Name</strong><span data-th-text="${userModel.user.name}"></span></p>
+    <p><strong>Email</strong><span th:text="${userModel.user.email}"></span></p>
+
+</div>
+<div>
+
+</div>
+<div th:replace="~{fragment/foot :: foot}"></div>
+</body>
+</html>
