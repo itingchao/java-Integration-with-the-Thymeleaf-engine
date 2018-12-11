@@ -49,6 +49,7 @@ public class UserController {
      * @param id
      * @return
      */
+    @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") Long id){
         userResposity.deleteUser(id);
         return new ModelAndView("redirect:/users");
@@ -60,6 +61,7 @@ public class UserController {
      * @param model
      * @return
      */
+    @GetMapping("/modify/{id}")
     public ModelAndView modify(@PathVariable("id") Long id,Model model){
         User user = userResposity.getUserById(id);
         model.addAttribute("user",user);
@@ -79,16 +81,6 @@ public class UserController {
         return new ModelAndView("users/form","userModel",model);
     }
 
-    /**https://github.com/itingchao/java-Integration-with-the-Thymeleaf-engine.git
-     * 根据id删除用户
-     * @param id
-     * @param model
-     * @return
-     */
-    public ModelAndView delete(@PathVariable("id") Long id,Model model){
-        userResposity.deleteUser(id);
-        return new ModelAndView("redirect:/users");//重定向到list.html界面
-    }
     /**
      * 保存和修改用户
      * @param user

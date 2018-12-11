@@ -26,11 +26,13 @@
             <!--/*@thymesVar id="userModel" type=""*/-->
             <tr th:each="user:${userModel.userList}">
                 <td th:text="${user.id}"></td>
-                <td th:text="${user.name}"></td>
-                <td th:text="${user.email}"><a th:href="@{'/users/'+${user.id}}"></a></td>
+                <td><a th:href="@{'/users/'+${user.id}} " th:text="${user.name}"></a></td>
+                <td th:text="${user.email}"></td>
             </tr>
+
         </tbody>
     </table>
+
     <div th:replace="~{fragment/foot :: foot}"></div>
 </body>
 </html>

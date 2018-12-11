@@ -13,6 +13,10 @@
     <p><strong>Email</strong><span th:text="${userModel.user.email}"></span></p>
 
 </div>
+        <div>
+            <a th:href="@{'/users/delete/'+${userModel.user.id}}">删除</a>
+            <a th:href="@{'/users/modify/'+${userModel.user.id}}">修改</a>
+        </div>
 <div>
 
 </div>
